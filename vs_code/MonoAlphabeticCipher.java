@@ -1,4 +1,3 @@
-package vs_code;
 import java.util.Scanner;
 
 public class MonoAlphabeticCipher {

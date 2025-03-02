@@ -1,4 +1,3 @@
-package vs_code;
 class RC4 {
     String pt;
     static char cipher[];

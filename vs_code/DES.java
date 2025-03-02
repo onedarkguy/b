@@ -1,4 +1,3 @@
-package vs_code;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;

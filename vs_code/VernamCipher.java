@@ -1,4 +1,3 @@
-package vs_code;
 import java.lang.Math;
 
 public class VernamCipher {

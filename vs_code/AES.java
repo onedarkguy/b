@@ -1,4 +1,3 @@
-package vs_code;
 import javax.crypto.*;
 import java.nio.charset.StandardCharsets;
 import java.security.*;

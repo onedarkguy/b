@@ -1,4 +1,3 @@
-package vs_code;
 import java.math.*;
 import java.security.*;
 
@@ -8,25 +7,33 @@ public class RSA {
 
     public RSA() {
         r = new SecureRandom();
-        p = new BigInteger(2, 0, r);
-        q = new BigInteger(2, 0, r);
+
+        p = BigInteger.probablePrime(512, r);
+        q = BigInteger.probablePrime(512, r);
         System.out.println("Prime numbers p and q are " + p.intValue() + ", " + q.intValue());
+
         n = p.multiply(q);
-        ph = (p.subtract(new BigInteger("1")));
-        ph = ph.multiply(q.subtract(new BigInteger("1")));
+
+        ph = (p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
+
         e = new BigInteger("2");
-        while (ph.gcd(e).intValue() > 1 || e.compareTo(ph) != -1) {
-            e = e.add(new BigInteger("1"));
-            d = e.modInverse(ph);
-            System.out.println("Public key is (" + n.intValue() + "," + e.intValue() + ")");
-            System.out.println("Private key is (" + n.intValue() + "," + d.intValue() + ")");
-            BigInteger msg = new BigInteger("15");
-            System.out.println("\nMessage is: " + msg);
-            BigInteger enmsg = encrypt(msg, e, n);
-            System.out.println("\nEncrypted Message is: " + enmsg.intValue());
-            BigInteger demsg = decrypt(msg, d, n);
-            System.out.println("\nDecrypted Message is: " + demsg.intValue());
+        while (ph.gcd(e).intValue() > 1 || e.compareTo(ph) >= 0) {
+            e = e.add(BigInteger.ONE);
         }
+
+        d = e.modInverse(ph);
+
+        System.out.println("Public key is (" + n.intValue() + "," + e.intValue() + ")");
+        System.out.println("Private key is (" + n.intValue() + "," + d.intValue() + ")");
+
+        BigInteger msg = new BigInteger("15");
+        System.out.println("\nMessage is: " + msg);
+
+        BigInteger enmsg = encrypt(msg, e, n);
+        System.out.println("\nEncrypted Message is: " + enmsg.intValue());
+
+        BigInteger demsg = decrypt(enmsg, d, n);
+        System.out.println("\nDecrypted Message is: " + demsg.intValue());
     }
 
     BigInteger encrypt(BigInteger msg, BigInteger e, BigInteger n) {
@@ -38,6 +45,6 @@ public class RSA {
     }
 
     public static void main(String args[]) {
-        RSA r = new RSA();
+        new RSA();
     }
 }

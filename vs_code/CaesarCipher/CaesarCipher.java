@@ -1,4 +1,3 @@
-package vs_code.CaesarCipher;
 import java.io.*;
 
 class CaesarCipher {

@@ -1,13 +1,21 @@
-package vs_code;
 class RailFence {
-    public static void main(String args[]) {
-        String input = "Good afternoon user.";
-        String output = "";
-        int len = input.length();
-        System.out.println("Input string: " + input);
-        for (int i = 0; i < len; i += 2) {
-            output += input.charAt(i);
+    public static void main(String[] args) {
+        String input = "Good afternoon everybody";
+        String cipherText = encryptRailFence(input);
+        System.out.println("Cipher text: " + cipherText);
+    }
+
+    public static String encryptRailFence(String text) {
+        StringBuilder row1 = new StringBuilder();
+        StringBuilder row2 = new StringBuilder();
+
+        for (int i = 0; i < text.length(); i++) {
+            if (i % 2 == 0)
+                row1.append(text.charAt(i));
+            else
+                row2.append(text.charAt(i));
         }
-        System.out.println("Cipher text: " + output);
+
+        return row1.toString() + row2.toString();
     }
 }
