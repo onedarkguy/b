@@ -108,3 +108,10 @@ transport input ssh
 exit
 crypto key generate rsa
 do sh ip ssh
+
+
+
+COMMAND PROMPT OF PC-C --------------------------------
+
+telnet 192.168.3.1
+ssh -l kaanchi 192.168.3.1
