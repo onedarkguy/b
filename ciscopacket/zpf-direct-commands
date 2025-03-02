@@ -36,12 +36,12 @@ no shut
 
 
 
-Router1 >> Config >> Static 
+Router1 >> Config >> Static --------------------------------
 Network: 0.0.0.0 
 Mask: 0.0.0.0 
 Next Hop: 10.1.1.2
 
-Router2 >> Config >> Static 
+Router2 >> Config >> Static --------------------------------
 Network: 192.168.1.0 
 Mask: 255.255.255.0 
 Next Hop: 10.1.1.1
@@ -50,7 +50,7 @@ Network: 192.168.3.0
 Mask: 255.255.255.0 
 Next Hop: 10.2.2.1
 
-Router3 >> Config >> Static 
+Router3 >> Config >> Static --------------------------------
 Network: 0.0.0.0 
 Mask: 0.0.0.0 
 Next Hop: 10.2.2.2
