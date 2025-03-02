@@ -36,6 +36,8 @@ no shut
 
 
 
+AFTER CONFIGURING THE ROUTERS--------------------------------
+
 Router1 >> Config >> Static --------------------------------
 Network: 0.0.0.0 
 Mask: 0.0.0.0 
@@ -56,8 +58,6 @@ Mask: 0.0.0.0
 Next Hop: 10.2.2.2
 
 
-AFTER CONFIGURING THE ROUTERS--------------------------------
-
 ------ROUTER 1--------
 conf t
 enable secret ty22
@@ -71,6 +71,7 @@ exit
 
 
 ------ROUTER 1--------
+en
 conf t
 username admin1 secret admin123
 aaa new-model
