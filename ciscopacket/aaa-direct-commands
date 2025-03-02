@@ -45,6 +45,8 @@ router rip
 network 192.168.1.0
 network 10.1.1.0
 exit
+exit
+sh ip route
 
 ------ROUTER 2--------
 conf t
@@ -53,6 +55,8 @@ network 10.1.1.0
 network 192.168.2.0
 network 10.2.2.0
 exit
+exit
+sh ip route
 
 ------ROUTER 3--------
 conf t
@@ -60,6 +64,7 @@ router rip
 network 192.168.3.0
 network 10.2.2.0
 exit
+sh ip route
 
 
 ------ROUTER 1--------
