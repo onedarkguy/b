@@ -81,12 +81,15 @@ conf t
 ip domain-name security.com
 crypto key generate rsa
 
+
+------ROUTER 1--------
 conf t
 aaa authentication login SSH-LOGIN local
 line vty 0 4
 login authentication SSH-LOGIN
 transport input ssh
 exit
+
 
 
 ------ROUTER 2--------
