@@ -1,3 +1,43 @@
+CONFIGURE ROUTER COMMANDS--------------------------------
+
+------ROUTER 1--------
+en
+conf t
+host r1
+int g0/1
+ip address 192.168.1.1 255.255.255.0
+no shut
+int s0/0/0
+ip address 10.1.1.2 255.255.255.252
+no shut
+
+------ROUTER 2--------
+en
+conf t
+host r2
+int g0/0
+ip address 192.168.2.1 255.255.255.0
+no shut
+int s0/0/0
+ip address 10.1.1.1 255.255.255.252
+no shut
+int s0/0/1
+ip address 10.2.2.1 255.255.255.252
+no shut
+
+------ROUTER 3--------
+en
+conf t
+host r3
+int g0/1
+ip address 192.168.3.1 255.255.255.0
+no shut
+int s0/0/1
+ip address 10.2.2.2 255.255.255.252
+no shut
+
+
+AFTER CONFIGURING THE ROUTERS--------------------------------
 
 ------ROUTER 1--------
 conf t
