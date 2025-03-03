@@ -79,6 +79,19 @@
 
 (E) Configure service-based AAA authentication using TACACS+ on Router 2
     Go to services of TACACS+ Server and then select AAA. Switch on the service and enter the client IP and password. Setup username and password as well.
+
+
+TACACS+ Server >> Services >> AAA --------------------
+
+Client Name : R2
+Client IP : 192.168.2.1
+Type : TACACS
+Secret : pwdr2
+
+Username : admin
+Password : admin123
+
+
     r2>en
     r2#conf t
     r2(config)#username admin secret admin123
@@ -93,6 +106,17 @@
 
 (F) Configure server-based AAA authentication using RADIUS on Router 3
     Go to services of RADIUS Server and then select AAA. Switch on the service and enter the client IP and password. Setup username and password as well.
+
+RADIUS Server >> Services >> AAA --------------------
+
+Client Name : R3
+Client IP : 192.168.3.1
+Type : RADIUS
+Secret : pwdr3
+
+Username : admin1
+Password : admin321
+
     r3>en
     r3#conf t
     r3(config)#username admin1 secret admin321
